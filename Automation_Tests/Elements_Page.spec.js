@@ -12,44 +12,42 @@ test.beforeAll(async ({ browser }) => {
 });
 
 
-test('openElementspage', async () => {
+test('open Elements Page', async () => {
   const element = await page.waitForSelector('.avatar.mx-auto.white');
   await element.click();
   const expectedUrlElementPage = 'https://demoqa.com/elements';
   const actualUrl = await page.url();
   await expect(actualUrl).toBe(expectedUrlElementPage);
-
-  
 });
 
-test('openTextBoxSection', async () => {
+test('open Text Box Section', async () => {
   const textBox = await page.getByRole('list').getByText('Text Box');
   await expect(textBox).not.toBeNull();
   await textBox.click();
 });
 
-test('fillFullNameField', async () => {
+test('fill FullName Field', async () => {
   const fullName = await page.getByPlaceholder('Full Name');
   await expect(fullName).not.toBeNull();
   await fullName.click();
   fullName.fill("Something New");
 });
 
-test('fillEmailField', async () => {
+test('fill Email Field', async () => {
   const email = await page.getByPlaceholder('name@example.com');
   await expect(email).not.toBeNull();
   await email.click();
   email.fill("something.new@gmail.com");
 });
 
-test('fillCurrentAdressField', async () => {
+test('fill CurrentAdress Field', async () => {
   const currentAdress = await page.getByPlaceholder('Current Address');
   await expect(currentAdress).not.toBeNull();
   await currentAdress.click();
   currentAdress.fill("Alabama Night st 51");
 });
 
-test('fillPermanentAdressfield', async () => {
+test('fill Permanent Adress Field', async () => {
   const permanentAdress = await page.locator('#permanentAddress-wrapper #permanentAddress');
   await expect(permanentAdress).not.toBeNull();
   await permanentAdress.click();

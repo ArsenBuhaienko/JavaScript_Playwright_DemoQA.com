@@ -61,6 +61,5 @@ test('fillPermanentAdressfield', async () => {
 });
 
 test.afterAll(async () => {
-  await page.close();
+ // await page.close();
 });
-
